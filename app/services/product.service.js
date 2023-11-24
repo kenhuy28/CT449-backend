@@ -36,7 +36,7 @@ const { ObjectId } = require("mongodb");
         const cursor = await this.Product.find(filter);
         return await cursor.toArray();
     }
-
+    // Thỏa mãn điều kiện tên
     async findByName(name) {
         return await this.find({
             name: { $regex: new RegExp(name), $options: "i" },
